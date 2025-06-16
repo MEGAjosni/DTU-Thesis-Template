@@ -1,0 +1,50 @@
+\begin{spacing}{1}
+    
+    \textbf{Title}\\
+    \thesistitle
+    
+    \textbf{Author}\\
+    \thesisauthor\\
+    \studentnumber
+    
+    \textbf{Supervisor}\\
+    \thesissupervisor
+    
+    \textbf{ETCS}\\
+    \thesisetcs
+    
+    \textbf{Hand-in date}\\
+    \thedate
+    
+    \vspace{2.5cm}
+
+    % Signature
+    \IfFileExists{frontmatter/front_gfx/signature.png}{
+        \includegraphics[width=6.8cm]{frontmatter/front_gfx/signature.png}
+    }{}
+    \vspace{0.05cm}
+    \hrule width 7cm \relax
+    \thesisauthor
+
+    \vspace{\stretch{.5}}
+    \vspace*{-16ex}
+
+    \begin{centering}
+        \includegraphics[width=1.9\textwidth]{frontmatter/front_gfx/dtu_frise_gray.pdf}
+    \end{centering}
+    
+    \vspace{\stretch{.5}}
+    \vspace*{-10ex}
+   
+    
+    {
+    \raggedleft
+    \small
+    \textbf{\department\\\departmentdescriber\\Technical University of Denmark\\}
+    \vspace{1em}
+    \addressI\\\addressII\\\addressIII\\\departmentemail\\\departmentwebsite\\
+    }
+    
+\end{spacing}
+
+\newpage

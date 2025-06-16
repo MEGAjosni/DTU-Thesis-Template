@@ -1,0 +1,39 @@
+%\usepackage{microtype}      % better looking text
+%\usepackage[utf8]{inputenc}
+\usepackage{fontspec}       % Package for custom fonts
+\usepackage[bottom=3cm, top=3cm, left=3cm, right=3cm]{geometry}     % Package for changing page margins (before fancyhdr) 
+\usepackage{fancyhdr}       % Package to change header and footer
+\usepackage{parskip}        % Package to tweak paragraph skipping (instead of indents a small skip is added after every paragraph)
+\usepackage{titlesec}
+\usepackage{tikz}           % Package for drawing
+\usetikzlibrary{shapes.geometric, matrix, positioning, fit, backgrounds, automata, positioning}
+\usepackage{pgfplots}       % Package for creating graphs and charts
+\usepgfplotslibrary{groupplots}
+\usepackage{xcolor}         % Package for defining DTU colours to be used
+\usepackage{amsmath, amssymb, bm}        % For math
+\DeclareMathOperator*{\argmin}{arg\,min}
+\usepackage{siunitx}        % SI units
+\usepackage{algorithm, algpseudocode}      % For algorithms
+\usepackage{listings}       % Package for inserting code, (before cleveref)
+\PassOptionsToPackage{hyphens}{url} % Ability to line break urls at hyphens
+\usepackage{hyperref}       % Package for cross referencing (also loads url package)
+\usepackage{cleveref}       % improved cross referencing
+\usepackage{textcomp}       % \textdegree = °C and other useful symbols
+\usepackage[english]{babel} % localisation 
+\usepackage{caption}        % better captions
+\usepackage{subcaption}     % for subfigures
+\usepackage{csquotes}       % For biblatex with babel
+\usepackage{tabularx}       % for ability to adjust column spacing in tabular better
+\usepackage{booktabs}       % for better tables
+\usepackage{float}          % floating figures in correct places
+\usepackage{lscape}       % For rotating figures
+\usepackage{calc}           % Adds ability for latex to calculate (3pt+2pt) 
+\usepackage{blindtext}
+\usepackage{wrapfig}        % For wrapping text around figures
+\usepackage{graphicx}       % For figure placement
+\usepackage{setspace}       % For line spacing
+\usepackage[backend=biber,style=numeric,sorting=none,maxnames=1]{biblatex} % Package for bibliography (citing)
+\addbibresource{references.bib}
+
+\usepgfplotslibrary{external} 
+\tikzexternalize[prefix=build/figures/]
