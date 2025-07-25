@@ -1,39 +1,82 @@
-%\usepackage{microtype}      % better looking text
-%\usepackage[utf8]{inputenc}
-\usepackage{fontspec}       % Package for custom fonts
-\usepackage[bottom=3cm, top=3cm, left=3cm, right=3cm]{geometry}     % Package for changing page margins (before fancyhdr) 
-\usepackage{fancyhdr}       % Package to change header and footer
-\usepackage{parskip}        % Package to tweak paragraph skipping (instead of indents a small skip is added after every paragraph)
-\usepackage{titlesec}
-\usepackage{tikz}           % Package for drawing
-\usetikzlibrary{shapes.geometric, matrix, positioning, fit, backgrounds, automata, positioning}
-\usepackage{pgfplots}       % Package for creating graphs and charts
-\usepgfplotslibrary{groupplots}
-\usepackage{xcolor}         % Package for defining DTU colours to be used
-\usepackage{amsmath, amssymb, bm}        % For math
-\DeclareMathOperator*{\argmin}{arg\,min}
-\usepackage{siunitx}        % SI units
-\usepackage{algorithm, algpseudocode}      % For algorithms
-\usepackage{listings}       % Package for inserting code, (before cleveref)
-\PassOptionsToPackage{hyphens}{url} % Ability to line break urls at hyphens
-\usepackage{hyperref}       % Package for cross referencing (also loads url package)
-\usepackage{cleveref}       % improved cross referencing
-\usepackage{textcomp}       % \textdegree = °C and other useful symbols
-\usepackage[english]{babel} % localisation 
-\usepackage{caption}        % better captions
-\usepackage{subcaption}     % for subfigures
-\usepackage{csquotes}       % For biblatex with babel
-\usepackage{tabularx}       % for ability to adjust column spacing in tabular better
-\usepackage{booktabs}       % for better tables
-\usepackage{float}          % floating figures in correct places
-\usepackage{lscape}       % For rotating figures
-\usepackage{calc}           % Adds ability for latex to calculate (3pt+2pt) 
-\usepackage{blindtext}
-\usepackage{wrapfig}        % For wrapping text around figures
-\usepackage{graphicx}       % For figure placement
-\usepackage{setspace}       % For line spacing
-\usepackage[backend=biber,style=numeric,sorting=none,maxnames=1]{biblatex} % Package for bibliography (citing)
-\addbibresource{references.bib}
+%------------------------------------------------------------
+% Encoding and Fonts
+%------------------------------------------------------------
+%\usepackage[utf8]{inputenc} % (only for pdfLaTeX; not needed with fontspec/XeLaTeX)
+\usepackage{fontspec}           % For custom fonts
 
-\usepgfplotslibrary{external} 
-\tikzexternalize[prefix=build/figures/]
+%------------------------------------------------------------
+% Language and Localization
+%------------------------------------------------------------
+\usepackage[english]{babel}     % Language support
+\usepackage{csquotes}           % Context-sensitive quotation support (used with biblatex)
+
+%------------------------------------------------------------
+% Document Layout and Appearance
+%------------------------------------------------------------
+\usepackage[bottom=3cm, top=3cm, left=3cm, right=3cm]{geometry} % Page margins
+\usepackage{setspace}           % Line spacing
+\usepackage{parskip}            % Space between paragraphs instead of indents
+\usepackage{fancyhdr}           % Custom headers and footers
+%\usepackage{microtype}         % Better typography (uncomment if using pdfLaTeX)
+
+%------------------------------------------------------------
+% Colors and Graphics
+%------------------------------------------------------------
+\usepackage{xcolor}             % Custom colors
+\usepackage{graphicx}           % Including images
+\usepackage{wrapfig}            % Wrap text around figures
+\usepackage{float}              % Improved float control
+\usepackage{caption}            % Better captions
+\usepackage{subcaption}         % Subfigures
+\usepackage{lscape}             % Landscape figures or pages
+
+%------------------------------------------------------------
+% Tables
+%------------------------------------------------------------
+\usepackage{tabularx}           % Better table column control
+\usepackage{booktabs}           % Nicer horizontal rules in tables
+
+%------------------------------------------------------------
+% Mathematics and Symbols
+%------------------------------------------------------------
+\usepackage{amsmath, amssymb, bm}  % Math symbols
+\DeclareMathOperator*{\argmin}{arg\,min}
+\usepackage{siunitx}            % SI units
+\usepackage{textcomp}           % Additional text symbols, e.g., \textdegree
+
+%------------------------------------------------------------
+% Code and Algorithms
+%------------------------------------------------------------
+\usepackage{listings}           % Code listings
+\usepackage{algorithm}          % Algorithm float
+\usepackage{algpseudocode}      % Pseudocode
+
+%------------------------------------------------------------
+% Cross-referencing and Links
+%------------------------------------------------------------
+\PassOptionsToPackage{hyphens}{url} % Allow URL breaks at hyphens
+\usepackage{hyperref}           % Hyperlinks (loads url package)
+\usepackage{cleveref}           % Smarter references
+
+%------------------------------------------------------------
+% TikZ and PGFPlots (Figures, Graphs, and Drawing)
+%------------------------------------------------------------
+\usepackage{tikz}               % Drawing and diagrams
+\usetikzlibrary{shapes.geometric, matrix, positioning, fit, backgrounds, automata, spy}
+\usepackage{pgfplots}           % Plots and graphs
+\usepgfplotslibrary{groupplots, external}
+\pgfplotsset{compat=newest}     % Use the latest version of PGFPlots
+\tikzexternalize[prefix=build/figures/] % Externalize TikZ figures (compiled separately)
+
+%------------------------------------------------------------
+% Utilities and Miscellaneous
+%------------------------------------------------------------
+\usepackage{titlesec}           % Section title formatting
+\usepackage{calc}               % Do arithmetic with lengths
+\usepackage{blindtext}          % Placeholder text
+
+%------------------------------------------------------------
+% Bibliography
+%------------------------------------------------------------
+\usepackage[backend=biber,style=numeric,sorting=none,maxnames=1]{biblatex}
+\addbibresource{references.bib}
