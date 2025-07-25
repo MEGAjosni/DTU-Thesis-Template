@@ -1,52 +1,60 @@
 \documentclass[a4paper, twoside]{report}
-\input{setup/preamble}
-\input{setup/statics}
-\input{setup/settings}
 
+% Load setup
+\input{setup/preamble}  % packages and definitions
+\input{setup/statics}   % custom commands/macros
+\input{setup/settings}  % title, author, etc.
 
 \begin{document}
 \large
 
+% ------------------------
 % Frontmatter
+% ------------------------
 \pagenumbering{gobble}
+
 \input{frontmatter/frontpage}
 \input{frontmatter/approval}
 \input{frontmatter/preface}
-\thispagestyle{empty}
 \input{frontmatter/acknowledgements}
-\thispagestyle{empty}
 \input{frontmatter/conventions}
-\thispagestyle{empty}
 
 \tableofcontents
-\thispagestyle{empty}
 \newpage
 \setcounter{page}{1}
-
-% Content
 \pagenumbering{arabic}
+
+% ------------------------
+% Main Content
+% ------------------------
 \input{sections/1_intro}
+
 \part{Theory}
 \input{sections/2_methods_materials}
+
 \part{Experiments and Results}
 \input{sections/3_experiments}
 \input{sections/4_discussion}
 \input{sections/5_conclusion}
 
-\clearpage
-\addcontentsline{toc}{part}{References}
+% ------------------------
+% References
+% ------------------------
+\clearpage              % Print bibliography on a new page
+\phantomsection
 \renewcommand{\bibname}{References}
-\printbibliography\newpage
-\clearpage
-\addcontentsline{toc}{part}{Appendix}
-\appendix
-\renewcommand{\thechapter}{}
-\renewcommand{\thesection}{\Alph{section}}
-\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
-\renewcommand{\thefigure}{\thesection.\arabic{figure}}
-\renewcommand{\thetable}{\thesection.\arabic{table}}
-\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\addcontentsline{toc}{chapter}{\numberline{}References}
+\printbibliography
+
+% ------------------------
+% Appendix
+% ------------------------
+\clearpage              % Start Appendix on a new page
+\myAppendix             % Defined in setup/settings
 \chapter*{Appendix}
+\phantomsection
+\addcontentsline{toc}{chapter}{Appendix}
+
 \input{backmatter/appendix}
 
 \end{document}
