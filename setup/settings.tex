@@ -88,6 +88,18 @@
 \counterwithout{section}{part}
 \numberwithin{section}{chapter}
 
+% Center and remove page number from "Parts" in ToC
+\makeatletter
+\renewcommand*\l@part[2]{%
+    \ifnum \c@tocdepth > -2\relax
+    \addvspace{1.5em}%
+    \begingroup
+        \centering
+        \bfseries\large #1\par
+    \endgroup
+\fi}
+\makeatother
+
 %==================================================
 % Title and Caption Spacing
 %==================================================
@@ -152,4 +164,17 @@
     stepnumber=1,
     tabsize=2,
     title=\lstname,
+}
+
+%==================================================
+% Appendix formatting
+%==================================================
+\newcommand{\myAppendix}{
+    \appendix
+    \renewcommand{\thechapter}{\Alph{chapter}} % suppress chapter number
+    \renewcommand{\thesection}{\thechapter.\arabic{section}}
+    \renewcommand{\thesubsection}{\thechapter.\arabic{section}.\arabic{subsection}}
+    \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+    \renewcommand{\thetable}{\thesection.\arabic{table}}
+    \renewcommand{\theequation}{\thesection.\arabic{equation}}
 }
