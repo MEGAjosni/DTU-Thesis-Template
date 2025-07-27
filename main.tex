@@ -7,27 +7,35 @@
 
 
 \begin{document}
-\large
 
 % ------------------------
 % Frontmatter
 % ------------------------
 \pagenumbering{gobble}
-
 \input{frontmatter/frontpage}
 \input{frontmatter/approval}
 \input{frontmatter/preface}
+\addcontentsline{toc}{chapter}{Front matter}
+\pagenumbering{roman}
 \input{frontmatter/acknowledgements}
 \input{frontmatter/conventions}
 
+\newpage
+
+% ------------------------
+% Table of Contents
+% ------------------------
+\pagenumbering{gobble}
 \tableofcontents
 \newpage
-\setcounter{page}{1}
-\pagenumbering{arabic}
 
 % ------------------------
 % Main Content
 % ------------------------
+\setcounter{page}{1}
+\pagenumbering{arabic}
+\pagestyle{main}
+
 \input{sections/1_intro}
 
 \part{Theory}
